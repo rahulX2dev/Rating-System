@@ -11,7 +11,7 @@ const StoreList = () => {
     const [search, setSearch] = useState('');
     const [sort, setSort] = useState('name');
     const [order, setOrder] = useState('ASC');
-    const [viewMode, setViewMode] = useState('grid'); // grid or list
+    const [viewMode, setViewMode] = useState('grid');
 
     useEffect(() => {
         fetchStores();
@@ -59,7 +59,6 @@ const StoreList = () => {
         <div className="store-list-container">
             <Background />
 
-            {/* Header Section */}
             <div className="store-list-header premium-glass">
                 <div>
                     <span className="store-eyebrow">
@@ -78,7 +77,6 @@ const StoreList = () => {
                 </div>
             </div>
 
-            {/* Search and Filter Bar */}
             <div className="search-filter-bar premium-glass">
                 <div className="search-container">
                     <Icon name="search" size={20} color="#6366f1" className="search-icon" />
@@ -132,7 +130,6 @@ const StoreList = () => {
                 </div>
             </div>
 
-            {/* Loading State */}
             {loading && (
                 <div className="stores-grid">
                     {[0, 1, 2, 3].map(i => (
@@ -141,7 +138,6 @@ const StoreList = () => {
                 </div>
             )}
 
-            {/* Error State */}
             {error && (
                 <div className="error-banner premium-glass">
                     <Icon name="bolt" size={18} color="#fca5a5" />
@@ -149,7 +145,6 @@ const StoreList = () => {
                 </div>
             )}
 
-            {/* Stores Grid/List */}
             {!loading && !error && (
                 <div className={`stores-${viewMode}`}>
                     {stores.length === 0 ? (

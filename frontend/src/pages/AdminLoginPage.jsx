@@ -15,7 +15,6 @@ const AdminLoginPage = () => {
         setError('');
         try {
             const user = await login(email, password);
-            // Verify this is an admin user
             if (user.role !== 'admin') {
                 setError('Access denied. This portal is for administrators only.');
                 return;
@@ -28,7 +27,6 @@ const AdminLoginPage = () => {
 
     return (
         <div className="auth-page">
-            {/* Background Glow Blobs */}
             <div className="auth-glow-mesh auth-glow-mesh-1"></div>
             <div className="auth-glow-mesh auth-glow-mesh-2"></div>
 

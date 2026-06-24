@@ -1,9 +1,5 @@
 import React, { useState } from 'react';
 
-/**
- * Premium star rating component built with inline SVG stars.
- * Keeps the exact same API ({ rating, onRate }) so consumers are untouched.
- */
 const StarRating = ({ rating = 0, onRate, size = 32, readOnly = false }) => {
     const [hover, setHover] = useState(0);
     const activeValue = hover || rating;

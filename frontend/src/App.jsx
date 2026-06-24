@@ -15,12 +15,11 @@ import OwnerDashboard from './pages/owner/OwnerDashboard';
 import { AuthProvider, useAuth } from './contexts/AuthContext';
 import Navbar from './components/Navbar';
 
-// A wrapper for protected routes
 const ProtectedRoute = ({ children, roles }) => {
     const { user, loading } = useAuth();
 
     if (loading) {
-        return <div>Loading...</div>; // Or a spinner
+        return <div>Loading...</div>;
     }
 
     if (!user) {
@@ -28,7 +27,7 @@ const ProtectedRoute = ({ children, roles }) => {
     }
 
     if (roles && !roles.includes(user.role)) {
-        return <Navigate to="/dashboard" />; // Or a 'Not Authorized' page
+        return <Navigate to="/dashboard" />;
     }
 
     return children;
@@ -41,23 +40,19 @@ const AppRoutes = () => {
         <>
             <Navbar />
             <Routes>
-                {/* Landing Page */}
                 <Route path="/" element={<LandingPage />} />
 
-                {/* Authentication Routes */}
                 <Route path="/login" element={<LoginPage />} />
                 <Route path="/signup" element={<SignupPage />} />
                 <Route path="/admin/login" element={<AdminLoginPage />} />
                 <Route path="/owner/login" element={<OwnerLoginPage />} />
 
-                {/* Generic Dashboard Redirector */}
                 <Route path="/dashboard" element={
                     <ProtectedRoute>
                         <DashboardRouter />
                     </ProtectedRoute>
                 } />
 
-                {/* Normal User Routes */}
                 <Route path="/stores" element={
                     <ProtectedRoute roles={['user']}>
                         <StoreList />
@@ -69,7 +64,6 @@ const AppRoutes = () => {
                     </ProtectedRoute>
                 } />
 
-                {/* Admin Routes */}
                 <Route path="/admin" element={
                     <ProtectedRoute roles={['admin']}>
                         <AdminDashboard />
@@ -91,7 +85,6 @@ const AppRoutes = () => {
                     </ProtectedRoute>
                 } />
 
-                {/* Store Owner Routes */}
                 <Route path="/owner" element={
                     <ProtectedRoute roles={['store_owner']}>
                         <OwnerDashboard />
@@ -103,7 +96,6 @@ const AppRoutes = () => {
                     </ProtectedRoute>
                 } />
 
-                {/* Fallback route */}
                 <Route path="*" element={<Navigate to="/" />} />
             </Routes>
         </>

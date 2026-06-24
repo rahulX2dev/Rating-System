@@ -23,7 +23,6 @@ const LoginPage = () => {
 
     return (
         <div className="auth-page">
-            {/* Background Glow Blobs */}
             <div className="auth-glow-mesh auth-glow-mesh-1"></div>
             <div className="auth-glow-mesh auth-glow-mesh-2"></div>
 

@@ -1,5 +1,3 @@
-// Form validation utilities
-
 export const validateName = (name) => {
     if (!name || name.trim().length < 20 || name.trim().length > 60) {
         return 'Name must be between 20 and 60 characters.';

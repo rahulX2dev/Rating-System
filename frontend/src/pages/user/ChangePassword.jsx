@@ -30,7 +30,6 @@ const ChangePassword = () => {
         setErrors({});
         setSuccess('');
 
-        // Validate
         const newErrors = {};
 
         if (!formData.oldPassword) {
@@ -58,7 +57,6 @@ const ChangePassword = () => {
             });
             setSuccess('Password changed successfully!');
             setTimeout(() => {
-                // Navigate based on role
                 if (user.role === 'admin') navigate('/admin');
                 else if (user.role === 'store_owner') navigate('/owner');
                 else navigate('/stores');

@@ -20,7 +20,6 @@ const SignupPage = () => {
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData(prev => ({ ...prev, [name]: value }));
-        // Clear error for this field when user types
         if (errors[name]) {
             setErrors(prev => ({ ...prev, [name]: null }));
         }
@@ -31,7 +30,6 @@ const SignupPage = () => {
         setErrors({});
         setSuccess('');
 
-        // Validate all fields
         const newErrors = {};
         const nameError = validateName(formData.name);
         const emailError = validateEmail(formData.email);
@@ -67,7 +65,6 @@ const SignupPage = () => {
 
     return (
         <div className="auth-page">
-            {/* Background Glow Blobs */}
             <div className="auth-glow-mesh auth-glow-mesh-1"></div>
             <div className="auth-glow-mesh auth-glow-mesh-2"></div>
 

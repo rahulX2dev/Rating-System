@@ -5,18 +5,16 @@ import './StoreManagement.css';
 const StoreManagement = () => {
     const [stores, setStores] = useState([]);
     const [filteredStores, setFilteredStores] = useState([]);
-    const [users, setUsers] = useState([]); // For owner dropdown
+    const [users, setUsers] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState('');
     const [showForm, setShowForm] = useState(false);
 
-    // Form state
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [address, setAddress] = useState('');
     const [ownerId, setOwnerId] = useState('');
 
-    // Filter state
     const [filter, setFilter] = useState('');
     const [ownerFilter, setOwnerFilter] = useState('all');
 
@@ -104,7 +102,6 @@ const StoreManagement = () => {
 
     return (
         <div className="store-management">
-            {/* Header */}
             <div className="management-header">
                 <div>
                     <h1 className="management-title">Store Management</h1>
@@ -115,7 +112,6 @@ const StoreManagement = () => {
                 </button>
             </div>
 
-            {/* Quick Stats */}
             <div className="quick-stats">
                 <div className="stat-mini">
                     <span className="stat-mini-icon">🏪</span>
@@ -147,7 +143,6 @@ const StoreManagement = () => {
                 </div>
             </div>
 
-            {/* Error Message */}
             {error && (
                 <div className="error-banner">
                     <span>⚠️ {error}</span>
@@ -155,7 +150,6 @@ const StoreManagement = () => {
                 </div>
             )}
 
-            {/* Add Store Form */}
             {showForm && (
                 <div className="form-card">
                     <h3 className="form-title">Add New Store</h3>
@@ -220,7 +214,6 @@ const StoreManagement = () => {
                 </div>
             )}
 
-            {/* Filters */}
             <div className="filters-section">
                 <div className="search-box">
                     <svg className="search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -246,7 +239,6 @@ const StoreManagement = () => {
                 </select>
             </div>
 
-            {/* Stores Table */}
             <div className="stores-table-container">
                 <table className="stores-table">
                     <thead>

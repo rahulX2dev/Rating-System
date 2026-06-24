@@ -12,14 +12,12 @@ const UserManagement = () => {
     const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
     const [userToDelete, setUserToDelete] = useState(null);
 
-    // Form state
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [address, setAddress] = useState('');
     const [role, setRole] = useState('user');
 
-    // Filter state
     const [filter, setFilter] = useState('');
     const [roleFilter, setRoleFilter] = useState('all');
 
@@ -156,7 +154,6 @@ const UserManagement = () => {
 
     return (
         <div className="user-management">
-            {/* Header with Stats */}
             <div className="management-header">
                 <div>
                     <h1 className="management-title">User Management</h1>
@@ -167,7 +164,6 @@ const UserManagement = () => {
                 </button>
             </div>
 
-            {/* Quick Stats */}
             <div className="quick-stats">
                 <div className="stat-mini">
                     <span className="stat-mini-icon">👥</span>
@@ -199,7 +195,6 @@ const UserManagement = () => {
                 </div>
             </div>
 
-            {/* Error Message */}
             {error && (
                 <div className="error-banner">
                     <span>⚠️ {error}</span>
@@ -207,7 +202,6 @@ const UserManagement = () => {
                 </div>
             )}
 
-            {/* Success Message */}
             {success && (
                 <div className="success-banner">
                     <span>✓ {success}</span>
@@ -215,7 +209,6 @@ const UserManagement = () => {
                 </div>
             )}
 
-            {/* Add User Form */}
             {showForm && (
                 <div className="form-card">
                     <h3 className="form-title">Add New User</h3>
@@ -289,7 +282,6 @@ const UserManagement = () => {
                 </div>
             )}
 
-            {/* Filters */}
             <div className="filters-section">
                 <div className="search-box">
                     <svg className="search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -316,7 +308,6 @@ const UserManagement = () => {
                 </select>
             </div>
 
-            {/* Users Table */}
             <div className="users-table-container">
                 <table className="users-table">
                     <thead>
@@ -414,7 +405,6 @@ const UserManagement = () => {
                 </table>
             </div>
 
-            {/* Delete Confirmation Modal */}
             {showDeleteConfirm && (
                 <div className="modal-overlay" onClick={() => setShowDeleteConfirm(false)}>
                     <div className="modal-content" onClick={(e) => e.stopPropagation()}>

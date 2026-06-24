@@ -3,7 +3,6 @@ import api from '../../services/api';
 import Icon from '../../components/Icon';
 import './OwnerDashboard.css';
 
-/* Render N small filled stars as an inline SVG row */
 const InlineStars = ({ count, size = 14 }) => (
     <span className="inline-stars" aria-label={`${count} stars`}>
         {Array.from({ length: 5 }).map((_, i) => (
@@ -112,7 +111,6 @@ const OwnerDashboard = () => {
         }
     ];
 
-    // Donut gauge math for average rating (out of 5)
     const avgNum = Number(avgRating) || 0;
     const R = 52;
     const CIRC = 2 * Math.PI * R;
@@ -122,7 +120,6 @@ const OwnerDashboard = () => {
         <div className="owner-dashboard">
             <Background />
 
-            {/* Header */}
             <div className="dashboard-header">
                 <div>
                     <span className="dashboard-eyebrow">
@@ -142,7 +139,6 @@ const OwnerDashboard = () => {
                 </div>
             </div>
 
-            {/* Statistics Cards */}
             <div className="stats-grid">
                 {statCards.map((stat, index) => (
                     <div
@@ -165,7 +161,6 @@ const OwnerDashboard = () => {
                 ))}
             </div>
 
-            {/* Rating hero: big donut gauge + distribution */}
             <div className="rating-hero premium-glass gradient-border">
                 <div className="rating-gauge-block">
                     <span className="block-label">
@@ -234,7 +229,6 @@ const OwnerDashboard = () => {
                 </div>
             </div>
 
-            {/* Recent Ratings Table */}
             <div className="ratings-table-card premium-glass">
                 <h3 className="card-title">
                     <Icon name="inbox" size={18} color="#a5b4fc" />

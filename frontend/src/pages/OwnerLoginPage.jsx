@@ -15,7 +15,6 @@ const OwnerLoginPage = () => {
         setError('');
         try {
             const user = await login(email, password);
-            // Verify this is a store owner user
             if (user.role !== 'store_owner') {
                 setError('Access denied. This portal is for store owners only.');
                 return;
@@ -28,7 +27,6 @@ const OwnerLoginPage = () => {
 
     return (
         <div className="auth-page">
-            {/* Background Glow Blobs */}
             <div className="auth-glow-mesh auth-glow-mesh-1"></div>
             <div className="auth-glow-mesh auth-glow-mesh-2"></div>
 

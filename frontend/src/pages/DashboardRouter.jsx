@@ -21,7 +21,6 @@ const DashboardRouter = () => {
         case 'store_owner':
             return <Navigate to="/owner" />;
         default:
-            // Fallback for unknown roles or if user object is malformed
             return <Navigate to="/login" />;
     }
 };

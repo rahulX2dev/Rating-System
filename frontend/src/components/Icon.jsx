@@ -1,10 +1,5 @@
 import React from 'react';
 
-/**
- * Premium inline SVG icon set (no emoji, no dependencies).
- * Usage: <Icon name="star" size={24} color="#fbbf24" />
- * Icons use currentColor by default so they inherit `color`.
- */
 const paths = {
     users: (
         <>

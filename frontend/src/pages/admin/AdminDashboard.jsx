@@ -4,7 +4,6 @@ import api from '../../services/api';
 import Icon from '../../components/Icon';
 import './AdminDashboard.css';
 
-/* Build a smooth sparkline path from a small set of points */
 const buildSparkline = (points, width = 96, height = 36) => {
     const max = Math.max(...points);
     const min = Math.min(...points);
@@ -133,14 +132,12 @@ const AdminDashboard = () => {
 
     return (
         <div className="admin-dashboard">
-            {/* Ambient background */}
             <div className="dashboard-bg" aria-hidden="true">
                 <span className="glow-blob b1" />
                 <span className="glow-blob b2" />
                 <span className="glow-blob b3" />
             </div>
 
-            {/* Header */}
             <div className="dashboard-header">
                 <div>
                     <span className="dashboard-eyebrow">
@@ -158,7 +155,6 @@ const AdminDashboard = () => {
                 </div>
             </div>
 
-            {/* Statistics Cards */}
             <div className="stats-grid">
                 {statCards.map((stat, index) => {
                     const spark = buildSparkline(stat.trend);
@@ -185,7 +181,6 @@ const AdminDashboard = () => {
                                 </div>
                             </div>
 
-                            {/* Mini sparkline */}
                             <svg className="stat-sparkline" viewBox="0 0 96 36" preserveAspectRatio="none">
                                 <defs>
                                     <linearGradient id={`spark-fill-${index}`} x1="0" y1="0" x2="0" y2="1">
@@ -203,7 +198,6 @@ const AdminDashboard = () => {
                 })}
             </div>
 
-            {/* Quick Actions */}
             <div className="quick-actions-section">
                 <h2 className="section-title">Quick Actions</h2>
                 <div className="quick-actions-grid">
@@ -226,7 +220,6 @@ const AdminDashboard = () => {
                 </div>
             </div>
 
-            {/* Platform Overview & System Status */}
             <div className="dashboard-bottom">
                 <div className="activity-card premium-glass">
                     <h3 className="card-title">Platform Overview</h3>
@@ -247,7 +240,6 @@ const AdminDashboard = () => {
                         </div>
                     </div>
 
-                    {/* Donut gauge for platform health */}
                     <div className="platform-health">
                         <div className="health-gauge">
                             <svg viewBox="0 0 120 120" className="health-gauge-svg">
